@@ -9,7 +9,7 @@ A GoJacabot prototype is probably most readily programmed in a fork of Influenci
 
 Programming and/or redesigning GoJacabot - or parts of it - would make a practical computer science student project, and/or an ongoing hobby for people interested in AI and Go.
 
-Illustrative video of GoJacabot processes: url tba
+Illustrative video of GoJacabot processes: url tba 
 
 
 [1] https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
