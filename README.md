@@ -5,7 +5,7 @@ GoJaca combines a revised version [1a] of SWIM commonsense colour-map constructi
 
 A GoJaca prototype is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki (to reuse their editing and GTP interface code), with GTP callouts to Laizy.
 
-Programming and/or redesigning GoJaca - or parts of it - would make a doable computer science student project, and/or an ongoing hobby for people interested in AI and Go.
+Programming and/or redesigning GoJaca - or parts of it - would make a practical computer science student project, and/or an ongoing hobby for people interested in AI and Go.
 
 Illustrative video of GoJaca processes: url tba
 
