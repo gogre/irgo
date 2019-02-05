@@ -1,12 +1,11 @@
 # GoJaca
-AI enhancement for Go clients/editors/players
+AI-enhanced Go client/editor/player interface
 
-GoJaca [0] combines a revised version [1a] of 'Commonsense Go' colour-map algorithm [1; 1b] with Influencie [2] and localised life-and-death analysis by Laizy [3] to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
+GoJaca design [0] combines a revised version [1a] of SWIM commonsense colour-map construction [1; 1b] with Influencie [2] shadow map generation and localised life-and-death analysis by Laizy [3], to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
 
-GoJaca's code is probably most easily constructed as a variant fork of Influencie, with callouts to Laizy.
-Influencie is written in Java.
+A GoJaca prototype is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki (to reuse their editing and GTP interface code), with GTP callouts to Laizy.
 
-Programming GoJaca - or parts of it - might make an interesting AI student project, or an ongoing hobby for people interested in Go who are fluent in Java, or able to translate and augment Influencie's code in a language of their choice.  
+Programming and/or redesigning GoJaca - or parts of it - would make a doable computer science student project, and/or an ongoing hobby for people interested in AI and Go.
 
 [0] tba
 [1] https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
