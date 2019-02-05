@@ -1,6 +1,8 @@
 # GoJacabot
 AI-enhanced Go client/editor/interface
 
+![sample display](https://github.com/gogre/GoJacabot/blob/master/daughter.png)
+
 GoJacabot combines a revised version [1a] of SWIM commonsense colour-map construction [1; 1b] with Influencie [2] shadow map generation and localised life-and-death analysis by Laizy [3], to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
 
 A GoJacabot prototype is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki - or a mashup of both of them - with GTP callouts to Laizy.
