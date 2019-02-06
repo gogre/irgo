@@ -1,15 +1,15 @@
-# GoJacabot
+# irgobot
 AI-enhanced Go client/editor/interface
 
 ![sample display](https://github.com/gogre/GoJacabot/blob/master/daughter.png)
 
-GoJacabot combines a revised version [1a] of SWIM commonsense colour-map construction [1; 1b] with Influencie [2] shadow map generation and localised life-and-death analysis by Laizy [3], to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
+irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a revised version [1a] of SWIM commonsense colour-map construction [1; 1b] with Influencie [2] shadow map generation and localised life-and-death analysis by Laizy [3], to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
 
-A GoJacabot prototype is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki - or a mashup of both of them - with GTP callouts to Laizy.
+An irgobot prototype is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki - or a mashup of both of them - with GTP callouts to Laizy.
 
-Programming and/or redesigning GoJacabot - or parts of it - would make a practical computer science student project, and/or an ongoing hobby for people interested in AI and Go.
+Programming and/or redesigning irgobot - or parts of it - would make a practical computer science student project, and/or an ongoing hobby for people interested in AI and Go.
 
-Illustrative video of GoJacabot processes: url tba 
+Illustrative video of irgobot processes: url tba 
 
 
 [1] https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
