@@ -1,7 +1,7 @@
 # irgobot
 AI-enhanced Go client/editor/interface
 
-
+![Image description](https://raw.githubusercontent.com/gogre/irgobot/master/pyramidirsmall.png)
 
 irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a revised version [1a] of Swim Commonsense Go colour-map [1; 1b] with Influencie [2] shadow map and localised life-and-death analysis by Laizy [3], to compute and display board overlays which show Ishida-type graphics [4] of group strength, territory, influence and moyos. 
 
