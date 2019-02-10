@@ -9,7 +9,7 @@ An irgobot prototype is probably most readily programmed in a fork of Influencie
 
 Programming and/or redesigning irgobot - or parts of it - would make a practical computer science student project, and/or an ongoing hobby for people interested in AI and Go.
 
-Illustrative video of irgobot processes: url tba 
+Illustrative video of irgobot processes: https://www.youtube.com/watch?v=pwxiBqykHGc&t=0s&index=7&list=PLfW0QbIZVHrf3fKo5Yp6soqOzgm6j3Jrc 
 
 
 [1] https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
