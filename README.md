@@ -15,11 +15,14 @@ An irgobot prototype is probably most readily programmed in a fork of Influencie
 
 Programming irgobot (or a part of it) would make a practical computer science project for someone interested in AI and visualisation.
 
-**Examples of irgobot in Use**
+**Examples of Use**
 
-1. Visualising Influence and Territory (https://www.youtube.com/watch?v=pwxiBqykHGc&t=0s&index=7&list=PLfW0QbIZVHrf3fKo5Yp6soqOzgm6j3Jrc)
-2. Highlighting Shape Flaws (tba)
-3. tba
+https://www.youtube.com/watch?v=zemcZKzgE7w&list=PLfW0QbIZVHrf3fKo5Yp6soqOzgm6j3Jrc&index=1
+
+1. [Visualising Influence and Territory](https://youtu.be/pwxiBqykHGc)
+2. [Stay Away from Thickness](https://youtu.be/95eSFWptmD0)
+3. Forcing Shape Flaws (tba)
+4. tba
 
 
 
