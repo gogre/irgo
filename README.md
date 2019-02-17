@@ -25,24 +25,23 @@ Programming irgobot (or a part of it) would make a doable computer science proje
 
 **1. Draw colourmap**  
 Propagate colour control  
-Circumscribe clusters and eyes  
+Circumscribe clusters  
 Identify and mark obviously dead stones    
 
 **2. Redraw colour-map**  
 
-**3. Compute shadows**  
+**3. Compute cluster shadows**  
 Foreach cluster do  
-...Make board copy  
-...Put pretend stones on colour-controlled points in board copy  
-...call Influencie with board copy to get cluster shadows  
+..pretendboard := board
+...Put pretend stones on colour-controlled points in pretendboard   
+...Call Influencie with pretendboard copy to get cluster shadows  
 
-**4. Perform local life-and-death analysis**  
- Foreach cluster do  
-...Circumscribe cluster shadow  
-...Make boardcopy  
+**4. Perform local dynamic life-and-death analysis**  
+ Foreach cluster+shadow do  
+...Circumscribe cluster+shadow ; make boardcopy 
 ...Fillup restof(boardcopy) with live groups with no legal moves  
-...call leela-zero  
-...Identify and mark locally dead stones in cluster   
+...Call leela-zero  
+...Identify and mark on board locally dead stones in cluster
 
 **5.** Redraw colour map and shadows  
 
@@ -50,28 +49,31 @@ Foreach cluster do
 
 
 **Propagate colour control =**  
-Until no new coloured points or links are discovered, repeat123                    
-...1. a newly-coloured point colours its links;                       
+Until no new coloured points or links are discovered, repeat 1,2,3                    
+...1. a newly-coloured point colours its links *a stone is a coloured point*                       
 ...2. an uncoloured empty point [edge point],                     
 .........at least 3 [2] of whose links are same-coloured                    
 .........and none opposite-coloured,                    
-......is coloured;                  
+......is coloured                  
 ...3. an uncoloured link connecting 2 uncoloured points,                     
 .........each of which has at least one coloured link                     
 .........and no opposite-colored links,                    
-......is coloured;                 
+......is coloured                 
 if a link becomes coloured by both colours,                       
 ...its colour is neutralised.                     
 
 
-**Circumscribe clusters and eyes =**                    
+**Circumscribe clusters =**                    
 clusters.numberof := 0;                 
-for point in b do                       
-...if all-links(point) are same-colour or neutral then                    
-......for each coloured-link(point) do                 
-......if member(otherpoint(link, point), cluster)                  
-.........# ie the point at the other end of the link                   
-......then add(point, cluster)                 
+foreach point in board do                       
+...if every(point.link) is same-colour then
+......point.colour := colour-controlled
+...if every(point.link) is same-colour or neutral then                     
+......foreach (point.link.otherpoint) do
+......... *ie the point at the other end of the link* 
+......if member(point.link.otherpoint, cluster)                  
+......then add(point, point.link.otherpoint.cluster)
+...if member(point, clusterA) and member(point, clusterB) then unite(clusterA,clusterB)
 ......else makenewcluster(point)  
 
 **Identify and mark obviously dead stones =**                
@@ -101,24 +103,24 @@ not(forany point in border(cluster)
 ...let newcluster = ({point}, clusters.numberof)   
 ...paint(board.point, point.newcluster.number, point.colour(point)   
 
-**Compute and circumscribe cluster shadows =**                        
+**Compute cluster shadows and circumscribe groups =**
+*a group is a set of clusters whose shadows are connected*
 iboard := board;                        
 foreach cluster in board do                      
 ...foreach point in cluster do                       
-......if point.coloured then iboard.point := pretendstone (colour);                       
-...isboard:= Influencie (iboard);                              
+......if point.coloured then iboard.point := pretendstone (colour)                       
+...isboard:= Influencie (iboard)                              
 ...foreach point in board do point.colour:= isboard.point.shadow;                            
-...foreach cluster in board do circumscribe (cluster and its shadow)                         
+..                        
 
-**Perform obvious life-and-death analysis =**                            
-foreach cluster in board do                         
-...foreach point in cluster and its shadow do                         
-......zboard.point:= board.point;                      
-......fillup rest of zboard with black stones;                         
-...poke 2 eyes in rest of zboard;                       
-...until endofgame do                                              
-......if null(intersection(leela-zero(zboard), cluster and its shadow)) then pass(zboard)                    
-......else makebestmove (zboard)                    
-...foreach point in cluster do                       
-......if board.point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
+**Perform local dynamic life-and-death analysis =**                            
+foreach group do                    
+......fillup rest of zboard with black stones                         
+...poke 2 eyes in rest of zboard                       
+...until endofgame do
+......bestmoves := call leela-zero(zboard)
+......if null(intersection(bestmoves, group)) then pass(zboard)                    
+......else makebestmove (bestmoves) on zboard                   
+...foreach point in group do                       
+......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
 ......then board.point.occupant.cluster.status:= dead
