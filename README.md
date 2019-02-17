@@ -17,8 +17,6 @@ Programming irgobot (or a part of it) would make a practical computer science pr
 
 **Examples of Use**
 
-https://www.youtube.com/watch?v=zemcZKzgE7w&list=PLfW0QbIZVHrf3fKo5Yp6soqOzgm6j3Jrc&index=1
-
 1. [Visualising Influence and Territory](https://youtu.be/pwxiBqykHGc)
 2. Forcing Shape Flaws (tba)
 3. tba
