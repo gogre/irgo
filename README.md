@@ -80,10 +80,10 @@ for point in b do
 ......if number(cluster.eyes) > 2                 
 .........or size(cluster.eyes) > 3               
 .........and shape(cluster.eye) not(in{dead-shapes})                  
-......then cluster.lad := alive                  
+......then cluster.status := alive                  
 ......elsif surrounded(cluster, enemies)                
 ............and foreach enemy in enemies (enemy.lad = alive)                      
-......then cluster.lad := dead
+......then cluster.status := dead
 
 **identify(cluster.eyes) =**
 foreach point in cluster do
@@ -105,22 +105,20 @@ not(forany point in border(cluster)
 iboard := board;                        
 foreach cluster in board do                      
 ...foreach point in cluster do                       
-...if point.coloured then iboard.point := pretendstone (colour);                       
-isboard:= Influencie (iboard);                              
-foreach point in board do point.shadow:= isboard.point.shadow;                            
-foreach cluster in board do circumscribe (cluster.shadow)                         
+......if point.coloured then iboard.point := pretendstone (colour);                       
+...isboard:= Influencie (iboard);                              
+...foreach point in board do point.colour:= isboard.point.shadow;                            
+...foreach cluster in board do circumscribe (cluster and its shadow)                         
 
 **Perform obvious life-and-death analysis =**                            
 foreach cluster in board do                         
-...foreach point in cluster union cluster.shadow do                         
+...foreach point in cluster and its shadow do                         
 ......zboard.point:= board.point;                      
 ......fillup rest of zboard with black stones;                         
 ...poke 2 eyes in rest of zboard;                       
-...until endofgame do                        
-......bestmoves:= intersection((Laizy(zboard), cluster);                       
-......if null(bestmoves) then pass(zboard)                    
-......else makemove (zboard)                    
+...until endofgame do                                              
+......if null(intersection(leela-zero(zboard), cluster and its shadow)) then pass(zboard)                    
+......else makebestmove (zboard)                    
 ...foreach point in cluster do                       
 ......if board.point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
-......then board.point.occupant:= deadenemystone
-
+......then board.point.occupant.cluster.status:= dead
