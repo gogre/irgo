@@ -74,15 +74,15 @@ for point in b do
 ......then add(point, cluster)                 
 ......else makenewcluster(point)  
 
-**Identify and mark obviously dead stones =**
-...foreach cluster in clusters do
-......identify(cluster.eyes);
-......if number(cluster.eyes) > 2
-.........or size(cluster.eyes) > 3
-.........and shape(cluster.eye) not(in{dead-shapes})
-......then cluster.lad := alive
-......elsif surrounded(cluster, enemies)
-............and foreach enemy in enemies (enemy.lad = alive)
+**Identify and mark obviously dead stones =**                
+...foreach cluster in clusters do               
+......identify(cluster.eyes);                
+......if number(cluster.eyes) > 2                 
+.........or size(cluster.eyes) > 3               
+.........and shape(cluster.eye) not(in{dead-shapes})                  
+......then cluster.lad := alive                  
+......elsif surrounded(cluster, enemies)                
+............and foreach enemy in enemies (enemy.lad = alive)                      
 ......then cluster.lad := dead
 
 **identify(cluster.eyes) =**
@@ -96,26 +96,31 @@ not(forany point in border(cluster)
 ...path(friend(point)
 ...or path(openspace, point))
 
-**Compute and circumscribe cluster shadows =**   
-iboard := board;  
-foreach cluster in board do
-...foreach point in cluster do
-...if point.coloured then iboard.point := pretendstone (colour);  
-isboard:= Influencie (iboard);  
-foreach point in board do point.shadow:= isboard.point.shadow;   
-foreach cluster in board do circumscribe (cluster.shadow)
+**makenewcluster(point) =**    
+..clusters.numberof +:= 1;   
+...let newcluster = ({point}, clusters.numberof)   
+...paint(board.point, point.newcluster.number, point.colour(point)   
 
-**Perform obvious life-and-death analysis =**   
-foreach cluster in board do
-...foreach point in cluster union cluster.shadow do
-......zboard.point:= board.point;
-......fillup rest of zboard with black stones;
-...poke 2 eyes in rest of zboard;
-...until endofgame do
-......bestmoves:= intersection((Laizy(zboard), cluster);
-......if null(bestmoves) then pass(zboard) 
-......else makemove (zboard)
-...foreach point in cluster do
-......if board.point.occupant = enemystone and not(zboard.point.occupant = enemystone)
+**Compute and circumscribe cluster shadows =**                        
+iboard := board;                        
+foreach cluster in board do                      
+...foreach point in cluster do                       
+...if point.coloured then iboard.point := pretendstone (colour);                       
+isboard:= Influencie (iboard);                              
+foreach point in board do point.shadow:= isboard.point.shadow;                            
+foreach cluster in board do circumscribe (cluster.shadow)                         
+
+**Perform obvious life-and-death analysis =**                            
+foreach cluster in board do                         
+...foreach point in cluster union cluster.shadow do                         
+......zboard.point:= board.point;                      
+......fillup rest of zboard with black stones;                         
+...poke 2 eyes in rest of zboard;                       
+...until endofgame do                        
+......bestmoves:= intersection((Laizy(zboard), cluster);                       
+......if null(bestmoves) then pass(zboard)                    
+......else makemove (zboard)                    
+...foreach point in cluster do                       
+......if board.point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
 ......then board.point.occupant:= deadenemystone
 
