@@ -74,8 +74,6 @@ for point in b do
 ......then add(point, cluster)                 
 ......else makenewcluster(point)  
 
-**makenewcluster(point) = **                        
-
 **Identify and mark obviously dead stones =**
 ...foreach cluster in clusters do
 ......identify(cluster.eyes);
