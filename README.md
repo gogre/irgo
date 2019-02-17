@@ -10,9 +10,9 @@ irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a 
 3. https://github.com/leela-zero/leela-zero
 4. https://senseis.xmp.net/?AllAboutThickness
 
-A prototype of [irgobot algorithms](https://github.com/gogre/irgobot/blob/master/algorithms.pdf) is probably most readily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki with GTP callouts to leela-zero.
+A prototype of irgobot is probably most easily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki with GTP callouts to leela-zero.
 
-Programming irgobot (or a part of it) would make a practical computer science project for someone interested in AI and visualisation.
+Programming irgobot (or a part of it) would make a doable computer science project for people interested in AI and visualisation.
 
 **Examples of Use**
 
