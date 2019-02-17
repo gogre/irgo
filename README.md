@@ -3,7 +3,7 @@ AI-enhanced Go playing client/editor
 
 ![Image description](https://github.com/gogre/irgobot/blob/master/pyramidirgit.png)
 
-irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a (debugged) Swim colour-map [1]  with Influencie shadow map [2] and localised life-and-death analysis by leela-zero [3], to compute Ishida-type graphics [4] of group strength, territory, influence and moyos. 
+irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a (debugged) Swim colour-map [1]  with Influencie shadow map [2] and localised life-and-death analysis by leela-zero [3], to compute groups and Ishida-type graphics [4] of their territory and influence and (coming soon, moyos and more). 
 
 1. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
 2. https://github.com/featurecat/Influencie
@@ -31,17 +31,27 @@ Identify and mark obviously dead stones
 **2. Redraw colour-map**  
 
 **3. Compute cluster shadows**  
-Foreach cluster do  
-..pretendboard := board
+foreach cluster do  
+...pretendboard := board
 ...Put pretend stones on colour-controlled points in pretendboard   
-...Call Influencie with pretendboard copy to get cluster shadows  
+...Call Influencie with pretendboard to get cluster shadows 
+...Circumscribe groups on board from pretendboard clusters+shadows
+*a group is a set of clusters whose shadows are contiguous*
 
-**4. Perform local dynamic life-and-death analysis**  
- Foreach cluster+shadow do  
-...Circumscribe cluster+shadow ; make boardcopy 
-...Fillup restof(boardcopy) with live groups with no legal moves  
+**4. Perform group life-and-death analysis**  
+ foreach group do  
+...make boardcopy                 
+...fillup rest of zboard with black stones                         
+...poke 2 eyes in rest of zboard; endofgame:= false                       
+...until endofgame do
+......call leela-zero(zboard) => bestmoves,endofgame
+......if null(intersection(bestmoves, group)) then pass(zboard)                    
+......else makebestmove in group on zboard                   
+foreach point in group do                       
+......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
+......then board.point.occupant.cluster.status:= dead
 ...Call leela-zero  
-...Identify and mark on board locally dead stones in cluster
+...Identify and mark on board locally dead stones surrounded by group
 
 **5.** Redraw colour map and shadows  
 
@@ -103,8 +113,7 @@ not(forany point in border(cluster)
 ...let newcluster = ({point}, clusters.numberof)   
 ...paint(board.point, point.newcluster.number, point.colour(point)   
 
-**Compute cluster shadows and circumscribe groups =**
-*a group is a set of clusters whose shadows are connected*
+**Circumscribe groups on board from pretendboard clusters+shadows =**
 iboard := board;                        
 foreach cluster in board do                      
 ...foreach point in cluster do                       
@@ -113,14 +122,5 @@ foreach cluster in board do
 ...foreach point in board do point.colour:= isboard.point.shadow;                            
 ..                        
 
-**Perform local dynamic life-and-death analysis =**                            
-foreach group do                    
-......fillup rest of zboard with black stones                         
-...poke 2 eyes in rest of zboard                       
-...until endofgame do
-......bestmoves := call leela-zero(zboard)
-......if null(intersection(bestmoves, group)) then pass(zboard)                    
-......else makebestmove (bestmoves) on zboard                   
-...foreach point in group do                       
-......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
-......then board.point.occupant.cluster.status:= dead
+                        
+
