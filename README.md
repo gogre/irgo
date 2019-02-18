@@ -30,13 +30,13 @@ Identify and mark obviously dead stones
 
 **2. Redraw colour-map**  
 
-**3. Compute cluster shadows**  
+**3. Compute cluster shadows and groups**  
 foreach cluster do  
-...pretendboard := board
+...pretendboard := board  
 ...Put pretend stones on colour-controlled points in pretendboard   
-...Call Influencie with pretendboard to get cluster shadows 
-...Circumscribe groups on board from pretendboard clusters+shadows
-*a group is a set of clusters whose shadows are contiguous*
+...Call Influencie with pretendboard to get cluster shadows   
+...Circumscribe group on board from pretendboard cluster+shadows  
+...*a group is a set of clusters whose shadows are contiguous*
 
 **4. Perform group life-and-death analysis**  
  foreach group do  
@@ -113,14 +113,14 @@ not(forany point in border(cluster)
 ...let newcluster = ({point}, clusters.numberof)   
 ...paint(board.point, point.newcluster.number, point.colour(point)   
 
-**Circumscribe groups on board from pretendboard clusters+shadows =**
+**Circumscribe group on board from pretendboard clusters+shadows =**
 iboard := board;                        
 foreach cluster in board do                      
 ...foreach point in cluster do                       
-......if point.coloured then iboard.point := pretendstone (colour)                       
+......if point is coloured then iboard.point := pretendstone(colour)                       
 ...isboard:= Influencie (iboard)                              
 ...foreach point in board do point.colour:= isboard.point.shadow;                            
-..                        
+                       
 
                         
 
