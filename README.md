@@ -3,7 +3,7 @@ AI-enhanced Go playing client/editor
 
 ![Image description](https://github.com/gogre/irgobot/blob/master/pyramidirgit.png)
 
-irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a (debugged) Swim colour-map [1]  with Influencie shadow map [2] and localised life-and-death analysis by leela-zero [3], to compute groups and Ishida-type graphics [4] of their territory and influence and (coming soon, moyos and more). 
+irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a (debugged) Swim colour-map [1]  with Influencie shadow map [2] and localised life-and-death analysis by leela-zero [3], to compute groups and Ishida-type graphics [4] of their territory and influence (and, coming soon, moyos; and, maybe later, more). 
 
 1. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3071677
 2. https://github.com/featurecat/Influencie
