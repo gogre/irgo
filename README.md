@@ -39,19 +39,17 @@ foreach cluster do
 ...*a group is a set of clusters whose shadows are contiguous*
 
 **4. Perform group life-and-death analysis**  
- foreach group do  
-...make boardcopy                 
-...fillup rest of zboard with black stones                         
+ foreach group do            
+...make boardcopy                            
+...fillup rest of zboard with black stones                                        
 ...poke 2 eyes in rest of zboard; endofgame:= false                       
 ...until endofgame do
-......call leela-zero(zboard) => bestmoves,endofgame
-......if null(intersection(bestmoves, group)) then pass(zboard)                    
-......else makebestmove in group on zboard                   
-foreach point in group do                       
-......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                          
-......then board.point.occupant.cluster.status:= dead
-...Call leela-zero  
-...Identify and mark on board locally dead stones surrounded by group
+......call leela-zero(zboard) => bestmoves,endofgame                
+......if null(intersection(bestmoves, group)) then pass(zboard)                     
+......else makebestmove in group on zboard                             
+...foreach point in group do                               
+......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
+......then board.point.occupant.cluster.status:= dead                            
 
 **5.** Redraw colour map and shadows  
 
@@ -86,6 +84,7 @@ foreach point in board do
 ...if member(point, clusterA) and member(point, clusterB) then unite(clusterA,clusterB)
 ......else makenewcluster(point)  
 
+
 **Identify and mark obviously dead stones =**                
 ...foreach cluster in clusters do               
 ......identify(cluster.eyes);                
@@ -103,15 +102,18 @@ foreach point in cluster do
 ......not border(point) or stone(point)
 ...then append(point, cluster.eyes) 
 
+
 **surrounded (cluster, enemies) =**          
 not(forany point in border(cluster) 
 ...path(friend(point)
 ...or path(openspace, point))
 
+
 **makenewcluster(point) =**    
 ..clusters.numberof +:= 1;   
 ...let newcluster = ({point}, clusters.numberof)   
 ...paint(board.point, point.newcluster.number, point.colour(point)   
+
 
 **Circumscribe group on board from pretendboard clusters+shadows =**
 iboard := board;                        
