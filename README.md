@@ -49,7 +49,7 @@ foreach cluster do
 ......else makebestmove in group on zboard                             
 ...foreach point in group do                               
 ......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
-......then board.point.occupant.cluster.status:= dead                            
+......then board.point.stone:= dead                            
 
 **5.** Redraw colour map and shadows  
 
