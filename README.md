@@ -38,18 +38,22 @@ foreach cluster do
 ...Circumscribe group on board from pretendboard cluster+shadows  
 ...*a group is a set of clusters whose shadows are contiguous*
 
-**4. Perform group life-and-death analysis**  
- foreach group do            
+**4. Perform group life-and-death analysis**            
+*whether black can live, white can kill, etc*                    
+ foreach group do                               
 ...make boardcopy                            
-...fillup rest of zboard with black stones                                        
-...poke 2 eyes in rest of zboard; endofgame:= false                       
-...until endofgame do
-......call leela-zero(zboard) => bestmoves,endofgame                
-......if null(intersection(bestmoves, group)) then pass(zboard)                     
-......else makebestmove in group on zboard                             
-...foreach point in group do                               
-......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
-......then board.point.stone:= dead                            
+...fillup rest of zboard with black stones                 
+*easy for a machine; in video simulations i manually fillup with alternating black and white to save time*                                
+...poke 2 eyes in rest of zboard; endofgame:= false                                                                      
+...for onmove = {black, white} do                                                                              
+......until endofgame do                                                                                       
+.........call leela-zero(zboard, onmove) => bestmoves,endofgame                
+.........if null(intersection(bestmoves, group)) then pass(zboard)                     
+.........else makebestmove in group on zboard                             
+......foreach point in group do                               
+.........if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
+.........then board.point.stone:= <onmove,dead>            
+
 
 **5.** Redraw colour map and shadows  
 
