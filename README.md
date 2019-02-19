@@ -39,7 +39,7 @@ foreach cluster do
 ...*a group is a set of clusters whose shadows are contiguous*
 
 **4. Perform group life-and-death analysis**            
-*whether black can live, white can kill, etc*                    
+*whether black can live (with territory or seki), white can kill, etc*                    
  foreach group do                               
 ...make boardcopy                            
 ...fillup rest of zboard with black stones                 
