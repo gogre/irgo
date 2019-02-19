@@ -76,41 +76,40 @@ if a link becomes coloured by both colours,
 
 
 **Circumscribe clusters =**                    
-clusters.numberof := 0;                 
-foreach point in board do                       
-...if every(point.link) is same-colour then
-......point.colour := colour-controlled
-...if every(point.link) is same-colour or neutral then                     
-......foreach (point.link.otherpoint) do
-......... *ie the point at the other end of the link* 
-......if member(point.link.otherpoint, cluster)                  
-......then add(point, point.link.otherpoint.cluster)
-...if member(point, clusterA) and member(point, clusterB) then unite(clusterA,clusterB)
-......else makenewcluster(point)  
+clusters.numberof := 0                                                             
+foreach point in board do                                                                 
+...if every(point.link) is same-colour then                                           
+......point.colour := colour-controlled                                                  
+...if every(point.link) is same-colour or neutral then                                                             
+......foreach (point.link.otherpoint) do                                                       
+......... *ie the point at the other end of the link*                                        
+......if member(point.link.otherpoint, cluster)                                                                  
+......then add(point, point.link.otherpoint.cluster)                                                        
+...if member(point, clusterA) and member(point, clusterB) then unite(clusterA,clusterB)                                            
+......else makenewcluster(point)                                      
 
-
-**Identify and mark obviously dead stones =**                
-...foreach cluster in clusters do               
-......identify(cluster.eyes);                
-......if number(cluster.eyes) > 2                 
-.........or size(cluster.eyes) > 3               
-.........and shape(cluster.eye) not(in{dead-shapes})                  
+**Identify and mark obviously dead stones =**                                                          
+...foreach cluster in clusters do                                                            
+......identify(cluster.eyes)                                                                           
+......if number(cluster.eyes) > 2                                                                      
+.........or size(cluster.eyes) > 3                                                                
+.........and shape(cluster.eye) not(in{dead-shapes})                                                                
 ......then cluster.status := alive                  
 ......elsif surrounded(cluster, enemies)                
 ............and foreach enemy in enemies (enemy.lad = alive)                      
-......then cluster.status := dead
+......then cluster.status := dead                                                  
 
-**identify(cluster.eyes) =**
-foreach point in cluster do
-...if colour-controlled(point) and
-......not border(point) or stone(point)
+**identify(cluster.eyes) =**                                 
+foreach point in cluster do                                          
+...if colour-controlled(point) and                                        
+......not border(point) or stone(point)                                            
 ...then append(point, cluster.eyes) 
 
 
 **surrounded (cluster, enemies) =**          
-not(forany point in border(cluster) 
-...path(friend(point)
-...or path(openspace, point))
+not(forany point in border(cluster)                                                       
+...path(friend(point)                                                     
+...or path(openspace, point))                                                       
 
 
 **makenewcluster(point) =**    
@@ -119,13 +118,13 @@ not(forany point in border(cluster)
 ...paint(board.point, point.newcluster.number, point.colour(point)   
 
 
-**Circumscribe group on board from pretendboard clusters+shadows =**
+**Circumscribe group on board from pretendboard clusters+shadows =**                                          
 iboard := board;                        
 foreach cluster in board do                      
 ...foreach point in cluster do                       
 ......if point is coloured then iboard.point := pretendstone(colour)                       
 ...isboard:= Influencie (iboard)                              
-...foreach point in board do point.colour:= isboard.point.shadow;                            
+...foreach point in board do point.colour:= isboard.point.colour;                            
                        
 
                         
