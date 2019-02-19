@@ -17,7 +17,7 @@ Programming irgobot (or a part of it) would make a doable computer science proje
 **Examples of Use**
 
 1. [Visualising Influence and Territory](https://youtu.be/pwxiBqykHGc)
-2. Inducing Shape Flaws (tba)
+2. Float like a red dragonfly, sting like a bee (tba)
 3. tba
 4. 
 
