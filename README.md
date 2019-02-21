@@ -12,13 +12,23 @@ irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a 
 
 A prototype of irgobot is probably most easily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki with GTP callouts to leela-zero.
 
-Programming irgobot (or a part of it) would make a doable computer science project for people interested in AI and visualisation.
+Programming irgobot (or a part of it) would make a practical project for people interested in AI and visualisation.
 
 **Case Study**
 
-Black to play
+Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels.  Like any whole-board problem, its solution requires the solver to grasp the overall picture, to formulate and instantiate a strategic plan, and to find a tactic that serves that plan.  Translated into Go lingua franca, that means seeing what is urgent, what is important, where are the weak spots, and how to find a multipurpose sente move that launches a large-scale attack and prepares the way to gain more influence as the attack unfolds.
 
+![Image description](https://github.com/gogre/irgobot/blob/master/finallyfinal18.png)
 
+The problem (slightly bastardised because i had unwittingly added an extra black stone at F12) attracted a variety of responses from readers of Life in 19x19, ranging in strength from mid-kyu to mid-dan. https://www.lifein19x19.com/viewtopic.php?p=241486#p241486
+
+All responses had their merits, but none quite found the author's own answer, which brilliantly illustrates a key principle of Go technique.
+
+So it presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps would be helpful in guiding a reader towards the author's answer.
+
+Part 1, Step 1 of irgobot's visualisation process is presented here, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to see what influence it would have on nearby black stones in the centre.  Step 2 will consider what would happen if black were to play in that area first.  An overview of white's current territory and influence insofar as her upper left group is concerned can then be estimated by averaging those two results.
+
+Then irgobot will do the same thing for all the other groups.  Then,... to be continued.
 
 
 **Algorithm**
