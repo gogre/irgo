@@ -26,9 +26,11 @@ All responses had their merits, but none quite found the author's own answer, wh
 
 So it presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps would be helpful in guiding a reader towards the author's answer.
 
-Part 1, Step 1 of irgobot's visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to see what influence it would have on nearby black stones in the centre.  Step 2 will consider what would happen if black were to play in that area first.  An overview of white's current territory and influence insofar as her upper left group is concerned can then be estimated by averaging those two results.
+Part 1 Step 1 of irgobot's visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to show what influence it would have on nearby black stones in the centre.  Part 1 Step 2 will examine what would happen if black were to play in that area first.
 
-Then irgobot will do the same thing for all the other groups.  Then,... to be continued.
+irgobot obtains an overview of white's current territory and influence insofar as her upper left group is concerned by averaging those two results.
+
+Then irgobot will do the same thing for all the other groups.  Then, ... to be continued.
 
 
 **Algorithm**
