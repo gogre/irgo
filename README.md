@@ -14,14 +14,14 @@ A prototype of irgobot is probably most easily programmed in a fork of Influenci
 
 Programming irgobot (or a part of it) would make a doable computer science project for people interested in AI and visualisation.
 
-**Examples of Use**
+**Case Study**
 
-1. [Visualising Influence and Territory](https://youtu.be/pwxiBqykHGc)
-2. Float like a red dragonfly, sting like a bee (tba)
-3. tba
-4. 
+Black to play
 
-#Algorithm
+
+
+
+**Algorithm**
 
 **1. Draw colourmap**  
 Propagate colour control  
