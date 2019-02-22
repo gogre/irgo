@@ -29,7 +29,7 @@ So it presents a non-trivial challenge for irgobot, to see whether its Ishida-ty
 
 Part 1 Step 1 of irgobot's meaning-visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to show what influence it would have on nearby black stones in the centre.  Part 1 Step 2 will examine what would happen if black were to play in that area first.
 
-irgobot obtains an overview of white's current territory and influence insofar as her upper left group is concerned by averaging those two results.
+By this means, irgobot obtains the value of a black move in the upper left.
 
 Then irgobot will do the same thing for all the other groups.  Then, ...to be continued.
 
