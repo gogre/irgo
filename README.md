@@ -22,15 +22,15 @@ Black to play.  This problem, taken from a book written by a famous player, is a
 
 The problem (slightly bastardised because i had unwittingly added an extra black stone at F12) attracted a variety of responses from readers of Life in 19x19, ranging in strength from mid-kyu to mid-dan. https://www.lifein19x19.com/viewtopic.php?p=241486#p241486
 
-All responses had their merits, but none quite found the author's own answer, which brilliantly illustrates a key principle of Go technique.
+All responses had their merits, but none quite found the author's own answer, which brilliantly illustrates several key principles of Go technique.
 
 So it presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps would be helpful in guiding a reader towards the author's answer.
 
-Part 1 Step 1 of irgobot's visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to show what influence it would have on nearby black stones in the centre.  Part 1 Step 2 will examine what would happen if black were to play in that area first.
+Part 1 Step 1 of irgobot's meaning-visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to show what influence it would have on nearby black stones in the centre.  Part 1 Step 2 will examine what would happen if black were to play in that area first.
 
 irgobot obtains an overview of white's current territory and influence insofar as her upper left group is concerned by averaging those two results.
 
-Then irgobot will do the same thing for all the other groups.  Then, ... to be continued.
+Then irgobot will do the same thing for all the other groups.  Then, ...to be continued.
 
 
 **Algorithm**
