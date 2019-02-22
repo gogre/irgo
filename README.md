@@ -91,15 +91,17 @@ if a link becomes coloured by both colours,
 **Circumscribe clusters =**                    
 clusters.numberof := 0                                                             
 foreach point in board do                                                                 
-...if every(point.link) is same-colour then                                           
-......point.colour := colour-controlled                                                  
-...if every(point.link) is same-colour or neutral then                                                             
-......foreach (point.link.otherpoint) do                                                       
-......... *ie the point at the other end of the link*                                        
-......if member(point.link.otherpoint, cluster)                                                                  
-......then add(point, point.link.otherpoint.cluster)                                                        
-...if member(point, clusterA) and member(point, clusterB) then unite(clusterA,clusterB)                                            
-......else makenewcluster(point)                                      
+...if every(point.link) is same-colour               
+...then point.colour := colour-controlled                                                  
+...if every(point.link) is same-colour or neutral           
+...then foreach (point.link.otherpoint)                 
+........do if member(point.link.otherpoint, cluster)                                                                  
+...........then add(point, point.link.otherpoint.cluster)
+...........if not(member(point, any cluster)
+...........then makenewcluster(point) 
+........if member(point, clusterA) and member(point, clusterB)                          
+........then unite(clusterA,clusterB)                                            
+                                     
 
 **Identify and mark obviously dead stones =**                                                          
 ...foreach cluster in clusters do                                                            
