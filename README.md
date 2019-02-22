@@ -14,6 +14,7 @@ A prototype of irgobot is probably most easily programmed in a fork of Influenci
 
 Programming irgobot (or a part of it) would make a practical project for people interested in AI and visualisation.
 
+
 **Case Study**
 
 Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels.  Like any whole-board problem, its solution requires the solver to grasp the overall picture, to formulate and instantiate a strategic plan, and to find a tactic that serves that plan.  Translated into Go lingua franca, that means seeing what is urgent, what is important, where are the weak spots, and how to find a multipurpose sente move that launches a large-scale attack and prepares the way for black to stabilise her own groups and gain influence as the attack unfolds.
