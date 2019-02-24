@@ -17,11 +17,9 @@ Programming irgobot (or a part of it) would make a practical project for people 
 
 **Case Study**
 
-Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels.  
+Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels. https://www.youtube.com/watch?v=fctgnSqUVQg 
 
 ![Image description](https://github.com/gogre/irgobot/blob/master/finallyfinal18.png)
-
-The problem (slightly bastardised at first because i had initially unwittingly added an extra black stone at F12) attracted a variety of responses from readers of Life in 19x19, ranging in strength from mid-kyu to mid-dan. https://www.lifein19x19.com/viewtopic.php?p=241486#p241486
 
 It presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps could help guide a reader towards the author's answer.  Like any whole-board problem, its solution requires the solver to grasp the overall picture, to formulate and instantiate a strategic plan, and to find a tactic that serves that plan.  Translated into Go lingua franca, that means seeing what is urgent, what is important, where are the weak spots, and how to find a multipurpose sente move that launches a large-scale attack and prepares the way for black to stabilise her own groups and gain influence as the attack unfolds.
 
