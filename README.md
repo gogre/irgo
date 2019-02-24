@@ -93,13 +93,13 @@ clusters.numberof := 0
 foreach point in board do                                                                 
 ...if every(point.link) is same-colour               
 ...then point.colour := colour-controlled                                                  
-...if every(point.link) is same-colour or neutral           
-...then foreach (point.link.otherpoint)                 
+...if every(point.link) is same-colour or neutral                                                        
+...then foreach (point.link.otherpoint)                                                             
 ........do if member(point.link.otherpoint, cluster)                                                                  
-...........then add(point, point.link.otherpoint.cluster)
-...........if not(member(point, any cluster)
-...........then makenewcluster(point) 
-........if member(point, clusterA) and member(point, clusterB)                          
+...........then add(point, point.link.otherpoint.cluster)                                                    
+...........if not(member(point, any cluster)                                                
+...........then makenewcluster(point)                                                            
+........if member(point, clusterA) and member(point, clusterB)                                                                       
 ........then unite(clusterA,clusterB)                                            
                                      
 
