@@ -64,11 +64,11 @@ foreach cluster do
 .........if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
 ............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
 .........then move(zboard):= pass                                              
-.........else move(zboard):= biggest(bestmoves in group)                                   
+.........else move(zboard):= move                                                                       
 .........lastmove:= move                                        
-......foreach point in group do                                                            
-.........if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
-.........then board.point.stone:= <onmove,dead>            
+...foreach point in group do                                                            
+......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
+......then board.point.stone:= <onmove,dead>            
 
 
 **5.** Redraw colour map and shadows  
