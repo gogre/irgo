@@ -59,7 +59,7 @@ foreach cluster do
 ...*in video simulations i manually fillup with alternating black and white*                                
 ...poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
 ...until endofgame do                            
-......for onmove = {black, white} do                                       
+      for onmove = {black, white} do                                       
 .........move:= biggest(leela-zero(zboard, onmove))                                 
 .........if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
 ............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
