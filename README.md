@@ -31,8 +31,9 @@ By this means, irgobot obtains the value of a black move in the upper left.
 
 Then irgobot will do the same thing for all the other groups.  Then, ...to be continued.
 
-
-**Algorithm**
+==================================================================================================================
+                                                               
+**Irgobot Algorithm**
 
 **1. Draw colourmap**  
 Propagate colour control  
