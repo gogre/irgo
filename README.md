@@ -57,15 +57,14 @@ foreach cluster do
 ...make boardcopy                            
 ...fillup rest of zboard with black stones                 
 *easy for a machine; in video simulations i manually fillup with alternating black and white to save time*                                
-...poke 2 eyes in rest of zboard; endofgame:= false                                                                      
-...for onmove = {black, white} do                                                                              
-......until endofgame do                                                                                       
-.........call leela-zero(zboard, onmove) => bestmoves,endofgame                
-.........if null(intersection(bestmoves, group))                                             
-............or ko(lastmove)                           
-............*simulates every ko move being answered outside the group being examined*                         
+...poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
+...until endofgame do                            
+......for onmove = {black, white} do                                       
+.........move:= biggest(leela-zero(zboard, onmove))                                 
+.........if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
+............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
 .........then move(zboard):= pass                                              
-.........else move(zboard):= bestmove in group on zboard                                     
+.........else move(zboard):= biggest(bestmoves in group)                                   
 .........lastmove:= move                                        
 ......foreach point in group do                                                            
 .........if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
