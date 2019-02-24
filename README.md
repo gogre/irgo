@@ -52,11 +52,11 @@ foreach cluster do
 ...*a group is a set of clusters whose shadows are contiguous*
 
 **4. Perform group life-and-death analysis**            
-*whether black can live (with territory or seki), white can kill, etc*                    
+*whether group can live (with territory or seki), or opp can kill, etc*                    
  foreach group do                               
 ...make boardcopy                            
 ...fillup rest of zboard with black stones                 
-*easy for a machine; in video simulations i manually fillup with alternating black and white to save time*                                
+...*in video simulations i manually fillup with alternating black and white*                                
 ...poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
 ...until endofgame do                            
 ......for onmove = {black, white} do                                       
