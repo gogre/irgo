@@ -61,7 +61,7 @@ foreach cluster do
 ...for onmove = {black, white} do                                                                              
 ......until endofgame do                                                                                       
 .........call leela-zero(zboard, onmove) => bestmoves,endofgame                
-.........if null(intersection(bestmoves, group)) 
+.........if null(intersection(bestmoves, group))                                             
 ............or ko(lastmove)                           
 ............*simulates every ko move being answered outside the group being examined*                         
 .........then move(zboard):= pass                                              
