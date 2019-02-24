@@ -17,15 +17,13 @@ Programming irgobot (or a part of it) would make a practical project for people 
 
 **Case Study**
 
-Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels.  Like any whole-board problem, its solution requires the solver to grasp the overall picture, to formulate and instantiate a strategic plan, and to find a tactic that serves that plan.  Translated into Go lingua franca, that means seeing what is urgent, what is important, where are the weak spots, and how to find a multipurpose sente move that launches a large-scale attack and prepares the way for black to stabilise her own groups and gain influence as the attack unfolds.
+Black to play.  This problem, taken from a book written by a famous player, is aimed at a wide variety of skill levels.  
 
 ![Image description](https://github.com/gogre/irgobot/blob/master/finallyfinal18.png)
 
-The problem (slightly bastardised because i had unwittingly added an extra black stone at F12) attracted a variety of responses from readers of Life in 19x19, ranging in strength from mid-kyu to mid-dan. https://www.lifein19x19.com/viewtopic.php?p=241486#p241486
+The problem (slightly bastardised at first because i had initially unwittingly added an extra black stone at F12) attracted a variety of responses from readers of Life in 19x19, ranging in strength from mid-kyu to mid-dan. https://www.lifein19x19.com/viewtopic.php?p=241486#p241486
 
-All responses had their merits, but none quite found the author's own answer, which brilliantly illustrates several key principles of Go technique.
-
-So it presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps would be helpful in guiding a reader towards the author's answer.
+It presents a non-trivial challenge for irgobot, to see whether its Ishida-type maps could help guide a reader towards the author's answer.  Like any whole-board problem, its solution requires the solver to grasp the overall picture, to formulate and instantiate a strategic plan, and to find a tactic that serves that plan.  Translated into Go lingua franca, that means seeing what is urgent, what is important, where are the weak spots, and how to find a multipurpose sente move that launches a large-scale attack and prepares the way for black to stabilise her own groups and gain influence as the attack unfolds.
 
 Part 1 Step 1 of irgobot's meaning-visualisation process is presented in https://www.youtube.com/watch?v=LcBoZ-qIlEg, where irgobot first sketches the influence and territory that would result if white were to play first in the upper left corner, to start to estimate the value of white's territory there, and start to show what influence it would have on nearby black stones in the centre.  Part 1 Step 2 will examine what would happen if black were to play in that area first.
 
