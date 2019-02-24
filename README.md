@@ -80,12 +80,10 @@ Until no new coloured points or links are discovered, repeat 1,2,3
 .........at least 3 [2] of whose links are same-coloured                    
 .........and none opposite-coloured,                    
 ......is coloured                  
-...3. an uncoloured link connecting 2 uncoloured points,                     
+...3. an uncoloured link connecting 2 points,                     
 .........each of which has at least one coloured link                     
 .........and no opposite-colored links,                    
-......is coloured                 
-if a link becomes coloured by both colours,                       
-...its colour is neutralised.                     
+......is coloured                                    
 
 
 **Circumscribe clusters =**                    
