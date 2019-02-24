@@ -61,9 +61,13 @@ foreach cluster do
 ...for onmove = {black, white} do                                                                              
 ......until endofgame do                                                                                       
 .........call leela-zero(zboard, onmove) => bestmoves,endofgame                
-.........if null(intersection(bestmoves, group)) then pass(zboard)                     
-.........else makebestmove in group on zboard                             
-......foreach point in group do                               
+.........if null(intersection(bestmoves, group)) 
+............or ko(lastmove)                           
+............*simulates every ko move being answered outside the group being examined*                         
+.........then move(zboard):= pass                                              
+.........else move(zboard):= bestmove in group on zboard                                     
+.........lastmove:= move                                        
+......foreach point in group do                                                            
 .........if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
 .........then board.point.stone:= <onmove,dead>            
 
