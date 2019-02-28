@@ -50,22 +50,23 @@ foreach cluster do
 
 **4. Perform group life-and-death analysis**            
 *whether group can live (with territory or seki), or opp can kill, etc*                    
- foreach group do                               
-...make boardcopy                            
-...fillup rest of zboard with black stones                 
-...*in video simulations i manually fillup with alternating black and white*                                
-...poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
-...until endofgame do                            
-...for onmove = {black, white} do                                       
-.........move:= biggest(leela-zero(zboard, onmove))                                 
-.........if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
-............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
-.........then move(zboard):= pass                                              
-.........else move(zboard):= move                                                                       
-.........lastmove:= move                                        
-...foreach point in group do                                                            
-......if point.occupant = enemystone and not(zboard.point.occupant = enemystone)                                                        
-......then board.point.stone:= <onmove,dead>            
+ foreach group do                                 
+ ...foreach colour do                            
+......make boardcopy                            
+......fillup rest of zboard with black stones                 
+......*in video simulations i manually fillup with alternating colours*                                                                                                                      
+......poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
+......until endofgame do                            
+.........for onmove = colour, opp(colour) do                                       
+............move:= biggest(leela-zero(zboard, onmove))                                 
+............if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
+...............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
+............then move(zboard):= pass                                              
+............else move(zboard):= move                                                                       
+............lastmove:= move                                        
+......foreach point in group do                                                            
+.........if point.occupant = stone and not(zboard.point.occupant = stone)                                                        
+.........then board.point.stone:= <onmove,dead>            
 
 
 **5.** Redraw colour map and shadows  
