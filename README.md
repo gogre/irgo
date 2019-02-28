@@ -57,7 +57,7 @@ foreach cluster do
 ......*in video simulations i manually fillup with alternating colours*                                                                                                                      
 ......poke 2 eyes in rest of zboard; endofgame:= false                                                                                                                                 
 ......until endofgame do                            
-.........for onmove = colour, opp(colour) do                                       
+.........for onmove = [colour, opp(colour)] do                                       
 ............move:= biggest(leela-zero(zboard, onmove))                                 
 ............if ko(lastmove) *simulates every ko move being answered outside the group being examined*                  
 ...............or self-atari(move) *prevent leela filling in her own eyes*                                                                               
@@ -65,8 +65,9 @@ foreach cluster do
 ............else move(zboard):= move                                                                       
 ............lastmove:= move                                        
 ......foreach point in group do                                                            
-.........if point.occupant = stone and not(zboard.point.occupant = stone)                                                        
-.........then board.point.stone:= <onmove,dead>            
+.........if point.occupant = stone and not(zboard.point.occupant = same(stone))                                                                                                         
+.........then board.point.stone:= <onmove,dead>                                                       
+......group.territory.firsmove = <colour, count(board.group.internal empty points)>
 
 
 **5.** Redraw colour map and shadows  
