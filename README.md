@@ -31,7 +31,25 @@ Then irgobot will do the same thing for all the other groups.  Then, ...to be co
 
 ==================================================================================================================
                                                                
-**Irgobot Algorithm**
+***Irgobot Algorithm***
+
+
+**ontology**
+
+board = {point}                           
+point = [row, column, occupancy]                         
+occupancy = [stone|influence]                              
+influence = real *in range -1 to +1*                           
+*-1..<0 => black; 0 = neutral; >0..1 => white*                           
+
+stone = [colour, status]                                
+status = [firstmove,dead|alive]                                    
+*a dead stone not yet captured has residual aji*                                                                 
+firstmove = black|white                                 
+cluster = {point}                          
+group ={cluster}                                
+
+***Main Program***                             
 
 **1. Draw colourmap**  
 Propagate colour control  
@@ -44,7 +62,8 @@ Identify and mark obviously dead stones
 foreach cluster do  
 ...pretendboard := board  
 ...Put pretend stones on colour-controlled points in pretendboard   
-...Call Influencie with pretendboard to get cluster shadows   
+...Call Influencie with pretendboard to get cluster shadows                                                     
+...foreach point do board.point.influence:= pretendboard.point.influence                                      
 ...Circumscribe group on board from pretendboard cluster+shadows  
 ...*a group is a set of clusters whose shadows are contiguous*
 
@@ -67,7 +86,7 @@ foreach cluster do
 ......foreach point in group do                                                            
 .........if point.occupant = stone and not(zboard.point.occupant = same(stone))                                                                                                         
 .........then board.point.stone:= <onmove,dead>                                                       
-......group.territory.firsmove = <colour, count(board.group.internal empty points)>
+......group.territory.firstmove = <colour, count(board.group.internal empty points)>
 
 
 **5.** Redraw colour map and shadows  
