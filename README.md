@@ -12,7 +12,7 @@ irgobot, inspired by the works of Yoshio Ishida and Michael Redmond, combines a 
 
 A prototype of irgobot is probably most easily programmed in a fork of Influencie embedded in a fork of Lizzie or Sabaki with GTP callouts to leela-zero.
 
-Lizzie tweaks: https://github.com/gogre/irgobot/blob/master/musicalstones.pdf
+Lizzie tweaks: https://github.com/gogre/irgobot/blob/master/musicalstones.md
 
 Programming irgobot (or a part of it) would make a practical project for people interested in AI and visualisation.
 
