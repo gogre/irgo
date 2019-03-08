@@ -16,7 +16,8 @@ So irgobot uses Insert (or some other keyboard button) to toggle pondering.
 
 irgotbot's display of leela-generated move choices is a little different from Lizzie's, for the following reasons :-
 
-**1. **
+
+**1. **                                      
 
 People can remember lots of things,
 but there is good evidence,
@@ -30,7 +31,7 @@ For this reason,
 irgobot only shows leela's top 5 moves,
 
 
-**2. **
+**2. **                                  
 
 Playing Go is a bit like walking on a tightrope,
 especially if you are following a joseki,
@@ -58,7 +59,7 @@ by colouring moves with their change in win%,
 as well as their absolute values,
 
 
-**3. **
+**3. **                                     
 
 Leela zero is a probabilistic player,
 so the more a move has been evaluated,
@@ -81,7 +82,7 @@ personally, i don't think they are,
 since a win is a win,
 
 
-**4. **
+**4. **                                          
 
 i don't think it's either necessary or helpful to display
 playout count (or node visit count) to a player,
@@ -94,7 +95,7 @@ but to be on the safe side,
 a large number of node visits,
 
 
-**5. ** 
+**5. **                                               
 
 although people can do 
 some arithmetic in their heads,
@@ -168,7 +169,8 @@ means you are headed for trouble,
 and a red ring with a red fringe 
 means you should give up the game.
 
-**9. **
+**9. **  
+
 irgobot's  colours are like
 the notes of a two-note musical chord, 
 
