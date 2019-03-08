@@ -110,7 +110,7 @@ which affects how we perceive differences,
 
 
 
-**6.**
+**6. **
 
 so when it comes to conveying leela's findings to a player,
 irgobot does not display numbers, 
@@ -136,7 +136,7 @@ green is good,
 brown is boring, 
 and red means danger,
 
-**7.**
+**7. **
 
 classification colours are similar to
 the use of A,B,C,D, etc
@@ -154,7 +154,7 @@ where there is a single metric of perfomance,
 and grading moves on their win probability,
 is equally meaningful
 
-**8.**
+**8. **
 
 for example, a brown ring with a green fringe, 
 means you are not out of the woods yet, 
