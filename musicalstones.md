@@ -1,20 +1,20 @@
 **Musical Stones**
 
-irgobot's user display is based on Lizzie, with a few tweaks.  
+irgo's user display is based on Lizzie, with a few tweaks.  
 
-irgobot draws a new colour map and shadow map on the board for every move in a game tree, before navigation, so a review can proceed smoothly without interruptions, except when new variations are added during a session, when maps are redrawn live.
+irgo draws a new colour map and shadow map on the board for every move in a game tree, before navigation, so a review can proceed smoothly without interruptions, except when new variations are added during a session, when maps are redrawn live.
 
 The user can see how maps change from one move to the next by stepping down the game tree, and can compare alternatives by stepping across variations. 
 
-Lizzie steps directly sideways, from the nth move in one variation to the nth move in the next.  irgobot instead steps from the nth move in one variation to the 1st move of the next (or previous), because it is felt that is more logical for the user.
+Lizzie steps directly sideways, from the nth move in one variation to the nth move in the next.  irgo instead steps from the nth move in one variation to the 1st move of the next (or previous), because it is felt that is more logical for the user.
 
-As irgobot is primarily a review tool, users are expected to spend more time looking at variations than controlling Leela's pondering, especially as search time can be preset by limiting --playouts to as few as a few hundred -  for all but pros, leela's first few discovered moves are usually more than good enough to reveal amateurish mistakes.
+As irgo is primarily a review tool, users are expected to spend more time looking at variations than controlling Leela's pondering, especially as search time can be preset by limiting --playouts to as few as a few hundred -  for all but pros, leela's first few discovered moves are usually more than good enough to reveal amateurish mistakes.
 
-irgobot uses spacebar to shift from the end of one variation to the end of the next, cyclically, so the user can see the pros and cons of alternatives and cycle repeatedly through the set when so desired.
+irgo uses spacebar to shift from the end of one variation to the end of the next, cyclically, so the user can see the pros and cons of alternatives and cycle repeatedly through the set when so desired.
 
-So irgobot uses Insert (or some other keyboard button) to toggle pondering.
+So irgo uses Insert (or some other keyboard button) to toggle pondering.
 
-irgotbot's display of leela-generated move choices is a little different from Lizzie's, for the following reasons :-
+irgo's display of leela-generated move choices is a little different from Lizzie's, for the following reasons :-
 
 
 **1. **                                      
@@ -28,7 +28,7 @@ a few different things
 at the same time,
 
 For this reason, 
-irgobot only shows leela's top 5 moves,
+irgo only shows leela's top 5 moves,
 
 
 **2. **                                  
@@ -53,7 +53,7 @@ but this takes up space on the display screen,
 and distracts from the matter at hand:
 the board, and the moves,
 
-So irgobot displays advantage changes
+So irgo displays advantage changes
 right on the board,
 by colouring moves with their change in win%,
 as well as their absolute values,
@@ -113,22 +113,22 @@ which affects how we perceive differences,
 **6. **
 
 so when it comes to conveying leela's findings to a player,
-irgobot does not display numbers, 
+irgo does not display numbers, 
 but just qualitative values,
 so the player can see at a glance,
 which move is better than which
 
-move values  are expressed by two rings
+move values are expressed by two rings
 around a bulls-eye of the colour 
 of the player on move,
 
-the  inner ring expresses absolute win%, 
+the inner ring expresses absolute win%, 
 
 and its fringe depicts delta win%, 
 which is the difference between that move's win%, 
 and the win% of that player after her previous move,
 
-irgobot's colour scheme follows
+irgo's colour scheme follows
 the aesthetic code that, 
 
 yellow means bright and cheerful, 
@@ -171,7 +171,7 @@ means you should give up the game.
 
 **9. **  
 
-irgobot's  colours are like
+irgo's  colours are like
 the notes of a two-note musical chord, 
 
 which can be played instead of 
