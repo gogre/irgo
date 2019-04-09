@@ -1,12 +1,9 @@
 **Musical Stones**
 
-irgo's user display is based on Lizzie, with a few tweaks.  
 
 irgo draws a new colour map and shadow map on the board for every move in a game tree, before navigation, so a review can proceed smoothly without interruptions, except when new variations are added during a session, when maps are redrawn live.
 
-The user can see how maps change from one move to the next by stepping down the game tree, and can compare alternatives by stepping across variations. 
-
-Lizzie steps directly sideways, from the nth move in one variation to the nth move in the next.  irgo instead steps from the nth move in one variation to the 1st move of the next (or previous), because it is felt that is more logical for the user.
+The user can see how maps change from one move to the next by stepping down the game tree, and can compare alternatives by stepping across variations, from the nth move in one variation to the 1st move of the next (or previous), because it is felt that is more logical for the user.
 
 As irgo is primarily a review tool, users are expected to spend more time looking at variations than controlling Leela's pondering, especially as search time can be preset by limiting --playouts to as few as a few hundred -  for all but pros, leela's first few discovered moves are usually more than good enough to reveal amateurish mistakes.
 
@@ -14,7 +11,7 @@ irgo uses spacebar to shift from the end of one variation to the end of the next
 
 So irgo uses Insert (or some other keyboard button) to toggle pondering.
 
-irgo's display of leela-generated move choices is a little different from Lizzie's, for the following reasons :-
+**Laizy moves**
 
 
 **1. **                                      
@@ -28,7 +25,7 @@ a few different things
 at the same time,
 
 For this reason, 
-irgo only shows leela's top 5 moves,
+irgo shows at most Laizy's top 5 moves with win% within one standard deviation of Laizy's preferred move.
 
 
 **2. **                                  
@@ -198,31 +195,9 @@ https://youtu.be/zNdK3as5k0A
 ****
 
 
-**Win% icon ideas**
+**stone status decoration**
 
-Win% is on a linear scale of 0 to 100. The most obvious and mnemonic way to illustrate this is by analogy with a ubiquious concept: vitality. And that, in turn, is most meaningfully expressed by analogy with skin colour, or leaf colour. Or the colour of the sun.
+a stone whose life is uncertain could be indicated by a grey circle inside the stone, and one which is almost certainly dead by a circle of the opposite colour. The same theme could be used to indicate the influence of either side over neutral points too.
 
-When someone is hot, they flush red from increased blood pressure - and when cold, their skin turns blue as blood is drained from the extremities.
 
-A vibrantly alive leaf is bright green, but as it dies, it turns first yellow, then orange, then brown.
-
-The sun, at its zenith, is bright yellow - and at its nadir, near the horizon, it fades into red.
-
-So whichever colour scale you choose, it will implicitly have one or more of these interpretations, whether or not you intend it.
-
-The BBC once flirted with an icon called a "swingometer" to dramatise the swing from one party to the other as election results came in. It was cute, but suffered from the drawback that a real swingometer, a pendulum, naturally gravitates towards the middle. So it didn't last long. It might have lasted longer if it had been analogous with a compass needle, swinging from left to right, but with the middle pointing upwards, like a clock, instead of downwards like a pendulum - although in the case of the Brexit impasse, downwards is definitely where they are going!
-
-The thermometer, which uses an expanding or contracting column of mercury to indicate temperature was once ubiquitous, but since the advent of the digital age, it is starting to lose its mnemonicity.
-
-In Go, there are two players, two colours: black and white.
-
-So a solid black icon would imply that black dominates, a white one that white does, and a grey one that there is no clear leader.
-
-So that's all you need. You could have 50 shades of grey if you wanted to be pedantic.
-
-You could make the icon a solid circle on a neutral background, with a black or white ring around it to indicate whose move it was, so as to not distract the eye, and the attention, by marking the last move on the board.
-
-The theme of black/white domination could be extended to the stones on the board: a stone whose life is uncertain could be indicated by a grey circle inside the stone, and one which is almost certainly dead by a circle of the opposite colour. You could use the same theme to indicate the probable future of neutral points too...
-
-For review purposes, what someone using irgo most wants to know is 'where is a good place to play next?'. For this purpose, irgo could find Lz's top 20 moves, work out their standard deviation, and then display only those that are within 1 sd of the best one. As green circles, because green is good. We don't need to be told where the bad moves are - we can find those ourselves!
 
