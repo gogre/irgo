@@ -196,3 +196,33 @@ so that any combination of them sounds harmonious
 **examples**
 https://youtu.be/zNdK3as5k0A
 ****
+
+
+**Win% icon ideas**
+
+Win% is on a linear scale of 0 to 100. The most obvious and mnemonic way to illustrate this is by analogy with a ubiquious concept: vitality. And that, in turn, is most meaningfully expressed by analogy with skin colour, or leaf colour. Or the colour of the sun.
+
+When someone is hot, they flush red from increased blood pressure - and when cold, their skin turns blue as blood is drained from the extremities.
+
+A vibrantly alive leaf is bright green, but as it dies, it turns first yellow, then orange, then brown.
+
+The sun, at its zenith, is bright yellow - and at its nadir, near the horizon, it fades into red.
+
+So whichever colour scale you choose, it will implicitly have one or more of these interpretations, whether or not you intend it.
+
+The BBC once flirted with an icon called a "swingometer" to dramatise the swing from one party to the other as election results came in. It was cute, but suffered from the drawback that a real swingometer, a pendulum, naturally gravitates towards the middle. So it didn't last long. It might have lasted longer if it had been analogous with a compass needle, swinging from left to right, but with the middle pointing upwards, like a clock, instead of downwards like a pendulum - although in the case of the Brexit impasse, downwards is definitely where they are going!
+
+The thermometer, which uses an expanding or contracting column of mercury to indicate temperature was once ubiquitous, but since the advent of the digital age, it is starting to lose its mnemonicity.
+
+In Go, there are two players, two colours: black and white.
+
+So a solid black icon would imply that black dominates, a white one that white does, and a grey one that there is no clear leader.
+
+So that's all you need. You could have 50 shades of grey if you wanted to be pedantic.
+
+You could make the icon a solid circle on a neutral background, with a black or white ring around it to indicate whose move it was, so as to not distract the eye, and the attention, by marking the last move on the board.
+
+The theme of black/white domination could be extended to the stones on the board: a stone whose life is uncertain could be indicated by a grey circle inside the stone, and one which is almost certainly dead by a circle of the opposite colour. You could use the same theme to indicate the probable future of neutral points too...
+
+For review purposes, what someone using irgo most wants to know is 'where is a good place to play next?'. For this purpose, irgo could find Lz's top 20 moves, work out their standard deviation, and then display only those that are within 1 sd of the best one. As green circles, because green is good. We don't need to be told where the bad moves are - we can find those ourselves!
+
